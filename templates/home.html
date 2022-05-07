@@ -1,0 +1,34 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<div class="container">
+    {% if all_games %}
+    <h1 class="text-center mb-4">Select Games</h1>
+    <div class="row">
+        {% for game in all_games %}
+        <div class="col-lg-6 mb-4">
+            <div class="card col d-flex justify-content-center" style="width: 18rem;">
+                <img class="card-img-top" style="background: cover;" src="{{game.thumbnail.url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{game.name}} </h5>
+                    <a href="{% url 'game' game.name %}" class="btn btn-primary">Play</a>
+                    <a href="{% url 'leaderboard' game.name %}" class="btn btn-primary">Leaderboard</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <h1 class="text-center mb-4">No Games Found!</h1>
+    {% endif %}
+</div> 
+
+</body>
+
+</html>
+
+{% endblock %}

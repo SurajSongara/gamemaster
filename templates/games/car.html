@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>PlayAI Car</title>
+  <link rel='stylesheet' href='https://unpkg.com/carbon-components@latest/css/carbon-components.css'>
+  <link rel="stylesheet" href="{% static 'css/skyfall.css' %}">
+  <link rel="stylesheet" href="{% static 'css/car.css' %}">
+  <link rel = "icon" href = "{% static '/images/logo.png' %}" type = "image/x-icon">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="infordisplay ">
+        <div class="toprow">
+            <div class="scorebox  iblock ">
+                <div class="scorevalue inscore"> 0 </div>
+                <div class="scorelabel inscore"> pts </div>
+                <div class="scoreadded inscore"> </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+
+        <div class="settingsswitches">
+            <div class=" ">
+                <div class="iblock floatleft">
+                    <label class="switch">
+                        <input type="checkbox" id="sound">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="  iblock soundofftext"> sound off</div>
+                <div class="clear"></div>
+            </div>
+
+        </div>
+
+        <div class="pausetext">
+            <div>Sound (s) </div>
+            <div>Pause (space bar) </div>
+        </div>
+
+        <div id="updatenote" class="updatenote mt10"> loading model ..</div>
+        <button  id="trackbutton" class="bx--btn bx--btn--secondary mt10 trackbutton" type="button" disabled>
+                Toggle Video Control ..
+              </button>
+
+
+    </div>
+    <video class="videobox canvasbox" autoplay="autoplay" id="myvideo"></video>
+  <canvas id="canvas" class="border canvasbox"></canvas>
+
+    <div class="pauseoverlay">
+        <div class="overlaycenter">
+            Loading...
+        </div>
+    </div>
+
+    <div class="carGame">
+
+        <div class="startScreen">
+            <h1>CAR RACING GAME</h1>
+            <p>Press here to start<br>If you hit you loose...</p>
+        </div>
+        <div class="gameArea"></div>
+    </div>
+
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/planck-js/0.1.44/planck-with-testbed.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/handtrackjs@latest/dist/handtrack.min.js'></script>
+    <script  src="{% static 'js/car.js' %}"></script>
+</body>
+</html>
